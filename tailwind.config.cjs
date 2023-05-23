@@ -5,7 +5,6 @@ module.exports = {
     extend: {
       fontFamily: {
         boxing: ["Boxing", "sans-serif"],
-        "boxing-striped": ["Boxing Striped", "sans-serif"],
       },
     },
   },

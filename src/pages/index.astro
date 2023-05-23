@@ -12,10 +12,18 @@
   <body>
     <header class="relative">
       <div
-        class="absolute left-1/2 -translate-x-1/2 flex flex-col justify-center items-center z-10"
+        class="flex flex-col justify-center items-center py-8 md:absolute md:left-1/2 md:-translate-x-1/2 md:top-6 md:py-0 z-10"
       >
-        <img class="w-32 lg:w-64 h-auto" src="logo.webp" alt="Logo" />
-        <h1 class="font-boxing text-3xl text-white uppercase font-bold">
+        <img
+          class="w-32 lg:w-64 h-auto"
+          src="logo.webp"
+          alt="Logo"
+          height="128px"
+          width="136px"
+        />
+        <h1
+          class="font-boxing text-3xl md:text-4xl text-white uppercase font-bold"
+        >
           <span
             class="bg-clip-text text-transparent bg-gradient-to-b from-indigo-200 via-white-400 to-slate-400 py-1"
           >
@@ -28,7 +36,7 @@
     <main>
       <!-- Fighters -->
       <section
-        class="flex justify-center relative h-screen pt-24 border-b border-white/100 [&>div>img]:absolute [&>div>img]:bottom-0 [&>div>img]:w-auto [&>div>img]:animate-duration-700"
+        class="flex justify-center relative pt-4 h-[45vh] md:h-[65vh] lg:h-screen lg:pt-24 border-b border-white/100 [&>div>img]:absolute [&>div>img]:bottom-0 [&>div>img]:w-auto [&>div>img]:animate-duration-700 overflow-hidden"
         id="fighters"
       >
         <div
@@ -101,11 +109,11 @@
       <!-- Event info -->
       <section
         id="info"
-        class="absolute bottom-16 z-50 left-1/2 -translate-x-1/2"
+        class="block bottom-16 z-50 lg:absolute lg:left-1/2 lg:-translate-x-1/2"
       >
         <div class="flex flex-col">
           <div class="px-5 pt-4 pb-2 bg-white text-black text-center">
-            <h2 class="font-boxing text-7xl">1 de JULIO</h2>
+            <h2 class="font-boxing text-6xl sm:text-7xl">1 de JULIO</h2>
           </div>
           <div class="px-5 pt-2 pb-1 bg-black text-white text-center">
             <a
@@ -119,7 +127,7 @@
               >
             </a>
           </div>
-          <div class="px-5 pt-2 pb-1 bg-blue-600 text-white text-center">
+          <div class="px-5 pt-2 pb-1 bg-blue-800 text-white text-center">
             <a
               class="hover:contrast-150 hover:scale-105 transition font-boxing text-4xl inline-block"
               href="https://twitch.tv/ibai"
@@ -147,12 +155,6 @@
     @font-face {
       font-family: "Boxing";
       src: url("/fonts/boxing.woff2");
-      font-weight: bold;
-    }
-
-    @font-face {
-      font-family: "Boxing Striped";
-      src: url("/fonts/boxing-striped.woff2");
       font-weight: bold;
     }
   </style>
