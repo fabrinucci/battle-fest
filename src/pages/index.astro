@@ -8,6 +8,12 @@
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Battle Fest</title>
+    <link
+      rel="preload"
+      href="/fonts/boxing.woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <header class="relative">
@@ -20,6 +26,7 @@
           alt="Logo"
           height="128px"
           width="136px"
+          fetchpriority="high"
         />
         <h1
           class="font-boxing text-3xl md:text-4xl text-white uppercase font-bold"
@@ -36,7 +43,7 @@
     <main>
       <!-- Fighters -->
       <section
-        class="flex justify-center relative pt-4 h-[45vh] md:h-[65vh] lg:h-screen lg:pt-24 border-b border-white/100 [&>div>img]:absolute [&>div>img]:bottom-0 [&>div>img]:w-auto [&>div>img]:animate-duration-700 overflow-hidden"
+        class="flex justify-center relative pt-4 h-[45vh] md:h-[65vh] lg:h-screen lg:pt-24 border-b border-white/20 [&>div>img]:absolute [&>div>img]:bottom-0 [&>div>img]:w-auto [&>div>img]:animate-duration-700 overflow-hidden"
         id="fighters"
       >
         <div
@@ -44,64 +51,84 @@
         >
         </div>
         <div class="relative w-full">
-          <img class="left-0 h-full z-50" src="boxers/coscu.webp" alt="Coscu" />
+          <img
+            class="left-0 h-full z-50"
+            srcset="boxers/coscu-mobile.webp 767w, boxers/coscu.webp"
+            sizes="(max-width: 767px) 767px, 100vw"
+            alt="Coscu"
+            fetchpriority="high"
+          />
           <img
             class="animate-fade-right animate-delay-300 left-[5%] h-[80%] z-40"
-            src="boxers/mayichi.webp"
+            srcset="boxers/mayichi-mobile.webp 767w, boxers/mayichi.webp"
+            sizes="(max-width: 767px) 767px, 100vw"
             alt="Mayichi"
           />
           <img
             class="animate-fade-right animate-delay-500 left-[13%] h-[75%] z-30"
-            src="boxers/viruzz.webp"
+            srcset="boxers/viruzz-mobile.webp 767w, boxers/viruzz.webp"
+            sizes="(max-width: 767px) 767px, 100vw"
             alt="Viruzz"
           />
           <img
             class="animate-fade-right animate-delay-700 left-[28%] h-[70%] z-20"
-            src="boxers/fernanfloo.webp"
+            srcset="boxers/fernanfloo-mobile.webp 767w, boxers/fernanfloo.webp"
+            sizes="(max-width: 767px) 767px, 100vw"
             alt="Fernanfloo"
           />
           <img
             class="animate-fade-right animate-delay-1000 left-[38%] h-[65%] z-10"
-            src="boxers/la-rivers.webp"
+            srcset="boxers/la-rivers-mobile.webp 767w, boxers/la-rivers.webp"
+            sizes="(max-width: 767px) 767px, 100vw"
             alt="La Rivers"
           />
           <img
             class="animate-fade-right animate-delay-[1300ms] left-[45%] h-[60%] z-0"
-            src="boxers/papigavi.webp"
+            srcset="boxers/papigavi-mobile.webp 767w, boxers/papigavi.webp"
+            sizes="(max-width: 767px) 767px, 100vw"
             alt="Papigavi"
+            fetchpriority="low"
           />
         </div>
 
         <div class="relative w-full">
           <img
             class="right-0 h-full z-50"
-            src="boxers/german.webp"
+            srcset="boxers/german-mobile.webp 767w, boxers/german.webp"
+            sizes="(max-width: 767px) 767px, 100vw"
             alt="German"
+            fetchpriority="high"
           />
           <img
             class="animate-fade-left animate-delay-300 right-[7%] h-[80%] z-40"
-            src="boxers/amouranth.webp"
+            srcset="boxers/amouranth-mobile.webp 767w, boxers/amouranth.webp"
+            sizes="(max-width: 767px) 767px, 100vw"
             alt="Amouranth"
           />
           <img
             class="animate-fade-left animate-delay-500 right-[17%] h-[75%] z-30"
-            src="boxers/shelao.webp"
+            srcset="boxers/shelao-mobile.webp 767w, boxers/shelao.webp"
+            sizes="(max-width: 767px) 767px, 100vw"
             alt="Shelao"
           />
           <img
             class="animate-fade-left animate-delay-700 right-[30%] h-[70%] z-20"
-            src="boxers/luzu.webp"
+            srcset="boxers/luzu-mobile.webp 767w, boxers/luzu.webp"
+            sizes="(max-width: 767px) 767px, 100vw"
             alt="Luzu"
           />
           <img
             class="animate-fade-left animate-delay-1000 right-[40%] h-[65%] z-10"
-            src="boxers/rivers.webp"
+            srcset="boxers/rivers-mobile.webp 767w, boxers/rivers.webp"
+            sizes="(max-width: 767px) 767px, 100vw"
             alt="Rivers"
           />
           <img
             class="animate-fade-left animate-delay-[1300ms] right-[47%] h-[60%] z-0"
-            src="boxers/ampeter.webp"
+            srcset="boxers/ampeter-mobile.webp 767w, boxers/ampeter.webp"
+            sizes="(max-width: 767px) 767px, 100vw"
             alt="Ampeter"
+            fetchpriority="low"
           />
         </div>
       </section>
@@ -132,12 +159,130 @@
               class="hover:contrast-150 hover:scale-105 transition font-boxing text-4xl inline-block"
               href="https://twitch.tv/ibai"
               target="_blank"
-              rel="noopener noreferrer">Buy Tickets</a
+              rel="noopener noreferrer">Comprar Entradas</a
             >
           </div>
         </div>
       </section>
+
+      <section class="p-5 py-20">
+        <div class="grid grid-cols-2 max-w-6xl gap-6 mx-auto w-full">
+          <a
+            class="col-span-2 lg:col-span-1 w-full rounded hover:scale-[1.03] transition"
+            href="https://cloud.e.alsa.com/veladaIII?utm_source=c%C3%B3mo_llegar&utm_medium=web&utm_campaign=2023_07_lavelada&utm_content=abr-jul"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              class="aspect-[32/9] lg:aspect-[26/9] rounded-md object-cover w-full object-left border border-white/10"
+              src="como-llegar.webp"
+              alt="Alsa te lleva a la velada"
+            />
+          </a>
+          <a
+            class="col-span-2 lg:col-span-1 w-full rounded hover:scale-[1.03] transition"
+            href="https://www.revolut.com/es-ES/promo/velada-de-ibai/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              class="aspect-[32/9] lg:aspect-[26/9] rounded-md object-cover w-full object-left border border-white/10"
+              src="consigue20e.webp"
+              alt="Abre tu cuenta en Revolut y consigue 20€"
+            />
+          </a>
+        </div>
+        <div class="pt-20 lg:px-20 xl:px-40 mx-auto w-full">
+          <h3
+            class="font-boxing font-bold text-4xl text-white text-center mb-5"
+          >
+            Cómo llegar al evento
+          </h3>
+          <a
+            class="block hover:scale-[1.02] hover:contrast-[1.1] transition w-full"
+            href="https://www.google.com/maps/place/Civitas+Metropolitan+Stadium,+Madrid/@40.4361939,-3.6016561,17z/data=!3m1!4b1!4m6!3m5!1s0xd422fea8401b789:0x245d0d64dad50ec4!8m2!3d40.4361939!4d-3.5994674!16s%2Fm%2F05515km?entry=ttu"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              class="rounded shadow-lg shadow-gray-100 w-full h-auto border border-black/10 invert"
+              src="map.webp"
+              alt="Mapa con la ubicación del evento"
+            />
+          </a>
+        </div>
+      </section>
     </main>
+
+    <footer class="w-full m-auto relative">
+      <div
+        class="footer__bg absolute inset-0 bg-[url('/footer_bg.webp')] bg-no-repeat bg-bottom bg-scroll bg-cover -z-10"
+      >
+      </div>
+      <div
+        class="mx-auto max-w-6xl w-full overflow-hidden px-6 pt-10 pb-10 sm:py-24 lg:px-8"
+      >
+        <div
+          class="mt-10 flex flex-col md:flex-row gap-y-8 justify-between items-center"
+        >
+          <nav class="flex gap-x-4 flex-grow basis-0 justify-start">
+            <a
+              href="https://www.instagram.com/infolavelada/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                class="w-8 h-8 text-white hover:text-yellow-300 transition"
+                xmlns="http://www.w3.org/2000/svg"
+                width="800"
+                height="800"
+                viewBox="0 0 20 20"
+                ><path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M5.869652.12273C4.241769.19618 2.830805.5942 1.691486 1.72871.548187 2.86918.155147 4.28558.081514 5.89653c-.045772 1.00548-.313437 8.60165.462693 10.59375.52339 1.34394 1.55425 2.37721 2.910487 2.90228.632844.24616 1.355242.41291 2.414958.46155 8.860815.401 12.145437.18263 13.53053-3.36383.245774-.63128.414931-1.35288.461698-2.40997.40498-8.88354-.065673-10.80914-1.609972-12.3516C17.027016.50685 15.5862-.32492 5.869652.12273m.081593 17.94475c-.970162-.04368-1.496538-.20547-1.847786-.34145-.883594-.34343-1.547285-1.00448-1.888583-1.88291-.591053-1.51368-.39503-8.70289-.342293-9.86619.051742-1.13948.282591-2.18069 1.086582-2.98467.995038-.99258 2.280627-1.47894 11.033979-1.08389 1.142304.05161 2.186099.28189 2.99208 1.08389.995038.99257 1.488577 2.28788 1.086582 11.00765-.043782.96776-.205973 1.49283-.342293 1.84321-.90051 2.30773-2.97218 2.62833-11.778268 2.22436m8.138418-13.37792c0 .65709.534335 1.19109 1.194046 1.19109.65971 0 1.195041-.534 1.195041-1.19109 0-.65708-.535331-1.19109-1.195041-1.19109-.659711 0-1.194046.53401-1.194046 1.19109m-9.22699 5.29836c0 2.81494 2.287593 5.09687 5.109521 5.09687 2.821929 0 5.109522-2.28193 5.109522-5.09687s-2.287593-5.09587-5.109522-5.09587c-2.821928 0-5.109521 2.28093-5.109521 5.09587m1.793059 0c0-1.82633 1.484597-3.30825 3.316462-3.30825 1.831866 0 3.316463 1.48192 3.316463 3.30825 0 1.82733-1.484597 3.30924-3.316463 3.30924-1.831865 0-3.316462-1.48191-3.316462-3.30924"
+                ></path></svg
+              >
+            </a>
+            <a
+              href="https://twitter.com/infoLaVelada"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                class="w-8 h-8 text-white hover:text-yellow-300 transition"
+                xmlns="http://www.w3.org/2000/svg"
+                width="800"
+                height="800"
+                viewBox="0 -2 20 20"
+                ><path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M6.29 16c7.547 0 11.675-6.15635 11.675-11.49454 0-.17525 0-.34951-.012-.52279.803-.57104 1.496-1.27991 2.047-2.09117-.748.32687-1.543.5415-2.356.63601.856-.50507 1.497-1.29861 1.804-2.23491-.806.47061-1.687.8024-2.606.98061-1.554-1.62647-4.153-1.70523-5.806-.17525-1.065.98651-1.518 2.45742-1.187 3.86039C6.55 4.79492 3.476 3.261 1.392.73762.303 2.58363.86 4.94457 2.663 6.12996 2.01 6.11125 1.371 5.93797.8 5.62489v.05119C.801 7.5989 2.178 9.2549 4.092 9.63591c-.604.16245-1.238.18608-1.852.06892.537 1.64616 2.078 2.77346 3.833 2.80595-1.453 1.12435-3.248 1.73476-5.096 1.7328-.326-.00099-.652-.0197-.977-.05809C1.877 15.37088 4.06 16 6.29 15.99705"
+                ></path></svg
+              >
+            </a>
+          </nav>
+
+          <img
+            src="/footer_logo.webp"
+            alt="La Velada del Año"
+            class="w-80 h-auto"
+          />
+
+          <div class="flex justify-end flex-grow basis-0">
+            <img
+              src="/partners.webp"
+              alt="Patrocinadores de la Velada del Año"
+              class="w-64 h-auto"
+            />
+          </div>
+        </div>
+        <p class="mt-10 text-center text-lg leading-5 text-white">
+          &copy; 2023 La Velada del Año | Todos los derechos reservados
+        </p>
+      </div>
+    </footer>
   </body>
 
   <style>
