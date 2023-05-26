@@ -2,6 +2,13 @@
   "name": "battle-fest",
   "type": "module",
   "version": "0.0.1",
+  "description": "Battle Fest is a landing page inspired by \"La velada del año 3\" to Ibai Llanos",
+  "license": "MIT",
+  "homepage": "https://github.com/fabrinucci/battle-fest",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabrinucci/battle-fest.git"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
