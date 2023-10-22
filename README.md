@@ -1,3 +1,5 @@
+![Project home](https://github.com/fabrinucci/battle-fest/blob/main/public/home.webp)
+
 <h1 align="center">Welcome to Battle Fest 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
@@ -32,16 +34,17 @@ npm run dev
 
 ## Technologies
 
-- [Astro](https://astro.build/)
-- [Tailwindcss](https://tailwindcss.com/)
+[![Astro](https://img.shields.io/static/v1?label=&message=astro&color=070707&logo=astro&logoColor=white&style=for-the-badge)](https://astro.build/)
+[![Tailwindcss](https://img.shields.io/static/v1?label=&message=TailwindCSS&color=06B6D4&logo=tailwindcss&logoColor=white&style=for-the-badge)](https://tailwindcss.com/)
 
 ## Author
 
 👤 **Fabrizio Nucci**
 
-- Github: [@fabrinucci](https://github.com/fabrinucci)
-- Twitter: [@FabrizioDev](https://twitter.com/FabrizioDev)
-- LinkedIn: [@fabrinucci](https://linkedin.com/in/fabrinucci)
+[![Website](https://img.shields.io/static/v1?label=&message=website&color=CCCCF1&style=for-the-badge)](https://fabrinucci.github.io)
+[![GitHub](https://img.shields.io/static/v1?label=&message=github&color=181717&logo=github&logoColor=white&style=for-the-badge)](https://github.com/fabrinucci)
+[![LinkedIn](https://img.shields.io/static/v1?label=&message=linkedin&color=0A66C2&logo=linkedin&logoColor=white&style=for-the-badge)](https://linkedin.com/in/fabrinucci)
+[![Twitter](https://img.shields.io/static/v1?label=&message=twitter&color=1D9BF0&logo=twitter&logoColor=white&style=for-the-badge)](https://twitter.com/FabrizioDev)
 
 ## Show your support
 
